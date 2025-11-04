@@ -1,0 +1,9 @@
+@model AzureTestWebApp.Models.Product
+
+<h2>Product Details</h2>
+<div>
+    <h3>@Model.Name</h3>
+    <p>@Model.Description</p>
+    <p>Price: @Model.Price.ToString("C")</p>
+    <p><a asp-controller="Products" asp-action="Index">Back to list</a></p>
+</div>

@@ -1,0 +1,26 @@
+@model IEnumerable<AzureTestWebApp.Models.Product>
+
+<h2>Products</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Description</td>
+            <td>@p.Price.ToString("C")</td>
+            <td><a asp-controller="Products" asp-action="Details" asp-route-id="@p.Id">Details</a></td>
+        </tr>
+    }
+    </tbody>
+</table>
